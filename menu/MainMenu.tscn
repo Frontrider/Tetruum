@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://menu/Help.gd" type="Script" id=1]
+[ext_resource path="res://assets/element_red_square.png" type="Texture" id=2]
+[ext_resource path="res://assets/element_red_square_glossy.png" type="Texture" id=3]
+[ext_resource path="res://Level.tres" type="TileSet" id=4]
+[ext_resource path="res://menu/close_help.gd" type="Script" id=5]
+[ext_resource path="res://menu/button_active.tres" type="StyleBox" id=6]
+[ext_resource path="res://menu/button.tres" type="StyleBox" id=7]
+[ext_resource path="res://menu/Play.gd" type="Script" id=8]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.33484
+margin_bottom = -1.33484
+rect_pivot_offset = Vector2( -569.927, -63.5349 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="."]
+margin_left = 188.652
+margin_top = 267.335
+margin_right = 391.652
+margin_bottom = 334.335
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 7 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Play"
+script = ExtResource( 8 )
+
+[node name="Help" type="Button" parent="."]
+margin_left = 188.864
+margin_top = 352.765
+margin_right = 391.864
+margin_bottom = 419.765
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 7 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Help"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="TileMap" parent="Help"]
+visible = false
+position = Vector2( -39.2438, -140.326 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 131071, 1, 0, 65545, 1, 0, 196607, 1, 0, 131081, 1, 0, 262143, 1, 0, 196617, 1, 0, 327679, 1, 0, 262153, 1, 0, 393215, 1, 0, 327689, 1, 0, 458751, 1, 0, 393225, 1, 0, 524287, 1, 0, 458761, 1, 0, 589823, 1, 0, 524297, 1, 0, 655359, 1, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0 )
+
+[node name="ColorRect" type="ColorRect" parent="Help/Panel"]
+margin_top = 33.0
+margin_right = 288.0
+margin_bottom = 290.0
+color = Color( 0.0941176, 0.0823529, 0.0823529, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Help/Panel"]
+margin_left = 14.5305
+margin_top = 89.5311
+margin_right = 279.53
+margin_bottom = 265.531
+text = "Move pieces left or right with the arrow keys.
+
+Clearing the level costs 10.000 points.
+
+Clearing the shape costs 1000 points.
+
+Fill out the red squares, while leaving the area inside them empty to clear all the rows that the shape occupies."
+
+[node name="close_help" type="TextureButton" parent="Help/Panel"]
+margin_left = 290.0
+margin_right = 323.0
+margin_bottom = 34.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+texture_disabled = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+script = ExtResource( 5 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 27.3723, 9.43872 )
+scale = Vector2( 0.8, 0.8 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 3, 0, 65540, 3, 0, 65541, 3, 0, 65542, 6, 0, 65543, 6, 0, 65544, 6, 0, 65545, 5, 0, 65546, 5, 0, 65548, 2, 0, 65550, 2, 0, 65551, 6, 0, 65553, 6, 0, 65554, 0, 0, 65556, 0, 0, 131073, 0, 0, 131075, 3, 0, 131079, 6, 0, 131081, 5, 0, 131083, 5, 0, 131084, 2, 0, 131086, 2, 0, 131087, 6, 0, 131089, 6, 0, 131090, 0, 0, 131091, 0, 0, 131092, 0, 0, 196609, 0, 0, 196611, 3, 0, 196612, 3, 0, 196613, 3, 0, 196615, 6, 0, 196617, 5, 0, 196618, 5, 0, 196620, 2, 0, 196622, 2, 0, 196623, 6, 0, 196625, 6, 0, 196626, 0, 0, 196628, 0, 0, 262145, 0, 0, 262147, 3, 0, 262151, 6, 0, 262153, 5, 0, 262155, 5, 0, 262156, 2, 0, 262158, 2, 0, 262159, 6, 0, 262161, 6, 0, 262162, 0, 0, 262164, 0, 0, 327681, 0, 0, 327683, 3, 0, 327684, 3, 0, 327685, 3, 0, 327687, 6, 0, 327689, 5, 0, 327691, 5, 0, 327692, 2, 0, 327693, 2, 0, 327694, 2, 0, 327695, 6, 0, 327696, 6, 0, 327697, 6, 0, 327698, 0, 0, 327700, 0, 0 )
+[connection signal="pressed" from="Play" to="Play" method="_on_Play_pressed"]
+[connection signal="pressed" from="Help" to="Help" method="_on_Help_pressed"]
+[connection signal="pressed" from="Help/Panel/close_help" to="Help/Panel/close_help" method="_on_close_help_pressed"]
